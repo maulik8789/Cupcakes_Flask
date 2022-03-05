@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <ol>
+        {% for cup in cups %}
+        <li  style="border: solid; border-bottom : 10px; border-color: black;">
+            Cupcake Flavor: {{cup.flavor}} <br>
+            <img style="height: 10%; width: 10%;" src="{{cup.image}}" alt="{{cup.flavor}}"> <br>
+            Size : {{cup.size}} <br>
+            Rating : {{cup.rating}} 
+            <Button data-id="{{cup.id}}" class="delete-cupcake">Delete</Button>
+        </li>
+        {% endfor %}
+    </ol>
+    <ol><li id="cupcakes-list"></li></ol>
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>
